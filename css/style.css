@@ -9,14 +9,20 @@
 }
 
 /* % UTILITIES */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
+/* img-fluid {
+    max-width: 100%;
+    height: auto;
+    } */
+
 
 
 /* % GENERAL */
+main {
+    background: linear-gradient(to bottom,
+            #009688 20%,
+            #dcdbd3 20% 100%);
+}
+
 ul {
     list-style: none;
 }
@@ -25,7 +31,26 @@ a {
     text-decoration: none;
 }
 
-img-fluid {
-    max-width: 100%;
-    height: auto;
+header {
+    height: 50px;
+    background-color: #000;
 }
+
+/* % Main */
+
+.wrapper>* {
+    background-color: #fff;
+}
+
+
+/* % Layout */
+
+.col-lft {
+    width: 35%;
+}
+
+.col-rght {
+    width: 65%;
+}
+
+/* Left Column */
