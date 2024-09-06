@@ -19,6 +19,11 @@ img {
     top: 0;
 }
 
+/* % Icons Style */
+i {
+    color: #b1b1b1;
+}
+
 /* % GENERAL */
 main {
     background: linear-gradient(to bottom,
@@ -31,7 +36,7 @@ ul {
 }
 
 a {
-    text-decoration: none;
+    color: grey;
 }
 
 header {
@@ -79,6 +84,31 @@ h3 {
 }
 
 /* TODO Adding overflow on the section contacts */
+
+/* % Alert Bell Icon Style */
+i.fa-bell-slash {
+    background-color: white;
+    color: #8edafc;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+}
+
+i.fa-search {
+    border-radius: 5px 0px 0px 5px;
+    font-size: .75em;
+    line-height: 24px;
+}
+
+.search-bar input {
+    border-radius: 0px 5px 5px 0px;
+}
+
+.search-bar input::placeholder {
+    font-size: 12px;
+}
 
 /* Right Column */
 .col-rght .chat {
