@@ -54,3 +54,31 @@ header {
 }
 
 /* Left Column */
+.col-lft .desktop-alerts {
+    height: 60px;
+    background-color: #8edafc;
+}
+
+.col-lft .search-bar {
+    height: 40px;
+    background-color: grey;
+}
+
+.col-lft .contacts-list {
+    height: calc(100% - 150px);
+    background-color: #f2f2f2;
+}
+
+/* TODO Adding overflow on the section contacts */
+
+/* Right Column */
+.col-rght .chat {
+    height: calc(100% - 100px);
+}
+
+.col-rght .input-message {
+    height: 50px;
+    background-color: #838383;
+}
+
+/* TODO Adding overflow on the section chat */
