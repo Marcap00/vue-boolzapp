@@ -41,18 +41,25 @@
                 <div class="wrapper d-flex h-100">
                     <!-- Left Column -->
                     <div class="col-lft">
+                        <!-- Top Col Left -->
                         <div class="col-lft-top sticky">
+                            <!-- Left Header -->
                             <header class="d-flex justify-content-between align-items-center p-2">
+                                <!-- Avatar -->
                                 <div class="avatar d-flex align-items-center">
+                                    <!-- Avatar Image -->
                                     <img class="img-avatar" src="img/avatar_io.png" alt="Avatar">
+                                    <!-- Name Avatar -->
                                     <h3>Sofia</h3>
                                 </div>
+                                <!-- Icons Column Left -->
                                 <div class="icons">
                                     <i class="fas fa-circle-notch mx-2"></i>
                                     <i class="fas fa-message mx-2"></i>
                                     <i class="fas fa-ellipsis-v mx-2"></i>
                                 </div>
                             </header>
+                            <!-- Section desktop alerts -->
                             <div class="desktop-alerts d-flex align-items-center gap-2 p-2">
                                 <i class="fas fa-bell-slash fa-sm"></i>
                                 <div class="text-alerts">
@@ -60,43 +67,57 @@
                                     <a href="#">Attiva notifiche desktop</a>
                                 </div>
                             </div>
+                            <!-- Section Search Bar -->
                             <div class="search-bar d-flex align-items-center p-2">
+                                <!-- Icons Search Bar -->
                                 <i class="fas fa-search bg-white border border-light px-3"></i>
+                                <!-- Input search -->
                                 <input type="text" class="w-100 border border-light p-1"
                                     placeholder="Cerca o inizia una nuova chat">
                             </div>
                         </div>
+                        <!-- Section contacts list -->
                         <div class="contacts-list overflow-y-scroll">
+                            <!-- Contacts List -->
                             <ul class="p-0 m-0">
+                                <!-- Contact -->
                                 <li v-for="(contact, index) in contacts" class="d-flex align-items-center p-2">
+                                    <!-- Img avatar contacts list -->
                                     <img class="img-avatar me-2" :src="contact.avatar" alt="#">
                                     <ul class="flex-grow-1">
+                                        <!-- Informations contacts -->
                                         <li>
                                             <h3> {{ contact.name }} </h3>
                                         </li>
                                         <li>Ultimo messaggio inviato</li>
                                     </ul>
+                                    <!-- Time last message -->
                                     <time>13:04</time>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <!-- Left Column -->
+                    <!-- Right Column -->
                     <div class="col-rght">
+                        <!-- Header Right -->
                         <header class="sticky d-flex align-items-center p-2">
+                            <!-- Image avatar column right -->
                             <img class="img-avatar me-2" :src="contacts[0].avatar" alt="">
+                            <!-- Information avatar -->
                             <ul class="flex-grow-1">
                                 <li>
                                     <h3> {{contacts[0].name}} </h3>
                                 </li>
                                 <li>Ultimo accesso oggi alle 12:00</li>
                             </ul>
+                            <!-- Icon header right -->
                             <div class="icons">
                                 <i class="fas fa-search mx-2"></i>
                                 <i class="fas fa-message mx-2"></i>
                                 <i class="fas fa-paperclip mx-2"></i>
                             </div>
                         </header>
+                        <!-- Section of contacts -->
                         <div class="chat overflow-y-scroll">
                             <ul class="p-0 m-0">
                                 <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam repudiandae amet
@@ -253,6 +274,7 @@
                                     molestiae officia ex quos architecto numquam ea! Nostrum, eligendi deserunt.</li>
                             </ul>
                         </div>
+                        <!-- Input writing message -->
                         <div class="input-message"></div>
                     </div>
                 </div>
