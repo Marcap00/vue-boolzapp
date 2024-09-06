@@ -33,7 +33,7 @@ a {
 
 header {
     height: 50px;
-    background-color: #000;
+    background-color: #eaeaea;
 }
 
 /* % Main */
@@ -61,12 +61,12 @@ header {
 
 .col-lft .search-bar {
     height: 40px;
-    background-color: grey;
+    background-color: #f9f9f9;
 }
 
 .col-lft .contacts-list {
     height: calc(100% - 150px);
-    background-color: #f2f2f2;
+    background-color: #fff;
 }
 
 /* TODO Adding overflow on the section contacts */
@@ -74,11 +74,12 @@ header {
 /* Right Column */
 .col-rght .chat {
     height: calc(100% - 100px);
+    background-image: url('../img/mine.png');
 }
 
 .col-rght .input-message {
     height: 50px;
-    background-color: #838383;
+    background-color: #f3eeea;
 }
 
 /* TODO Adding overflow on the section chat */
