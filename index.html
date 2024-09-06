@@ -83,7 +83,20 @@
                     </div>
                     <!-- Left Column -->
                     <div class="col-rght">
-                        <header class="sticky"></header>
+                        <header class="sticky d-flex align-items-center p-2">
+                            <img class="img-avatar me-2" :src="contacts[0].avatar" alt="">
+                            <ul class="flex-grow-1">
+                                <li>
+                                    <h3> {{contacts[0].name}} </h3>
+                                </li>
+                                <li>Ultimo accesso oggi alle 12:00</li>
+                            </ul>
+                            <div class="icons">
+                                <i class="fas fa-search mx-2"></i>
+                                <i class="fas fa-message mx-2"></i>
+                                <i class="fas fa-paperclip mx-2"></i>
+                            </div>
+                        </header>
                         <div class="chat overflow-y-scroll">
                             <ul class="p-0 m-0">
                                 <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam repudiandae amet

@@ -9,20 +9,16 @@
 }
 
 /* % UTILITIES */
-img {
+/* img {
     width: auto;
     max-height: 100%;
-}
+} */
 
 .sticky {
     position: sticky;
     top: 0;
 }
 
-/* % Icons Style */
-i {
-    color: #b1b1b1;
-}
 
 /* % GENERAL */
 main {
@@ -49,6 +45,10 @@ h3 {
     font-weight: 400;
 }
 
+/* % Icons Style */
+i {
+    color: #b1b1b1;
+}
 
 /* % Main */
 
@@ -96,7 +96,7 @@ i.fa-bell-slash {
     line-height: 40px;
 }
 
-i.fa-search {
+.search-bar i.fa-search {
     border-radius: 5px 0px 0px 5px;
     font-size: .75em;
     line-height: 24px;
