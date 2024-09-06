@@ -9,10 +9,10 @@
 }
 
 /* % UTILITIES */
-/* img-fluid {
-    max-width: 100%;
-    height: auto;
-    } */
+img {
+    width: auto;
+    max-height: 100%;
+}
 
 .sticky {
     position: sticky;
@@ -37,6 +37,11 @@ a {
 header {
     height: 50px;
     background-color: #eaeaea;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 
@@ -87,3 +92,10 @@ header {
 }
 
 /* TODO Adding overflow on the section chat */
+
+/* % Avatar Circle Img */
+.img-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
