@@ -15,6 +15,7 @@ createApp({
     data() {
         return {
             // Inizializzazione dei dati
+            textToFind: "",
             // Inizializzo il messaggio come stringa vuota
             newMessage: "",
             // Iniziallizzo l'indice del contatto attivo a 0
@@ -184,7 +185,15 @@ createApp({
             ],
         }
     },
+    computed: {
+
+    },
     methods: {
+        capitalize(text) {
+            const capitalizedText = text.charAt(0).toUpperCase() + text.substring(1);
+            return capitalizedText;
+        },
+
         // Metodo che cambia il contatto attivo
         setActiveContact(i) {
             // Assegno all'indice del contatto attivo l'indice del contatto cliccato
@@ -218,8 +227,25 @@ createApp({
             // Richiamo il metodo che risponde automaticamente dopo un secondo
             this.autoReplyMessage(i);
         },
+        // Metodo che cerca il contatto
+        searchContact() {
+            // Ciclo l'array dei contatti
+            this.contacts.forEach((contact) => {
+                contact.name = contact.name.toLowerCase();
+                this.textToFind = this.textToFind.toLowerCase();
+                // Se il nome del contatto include la stringa da cercare
+                if (contact.name.includes(this.textToFind)) {
+                    // Imposto il contatto come visibile
+                    contact.visible = true;
+                } else {
+                    // Altrimenti lo rendo non visibile
+                    contact.visible = false;
+                }
+                contact.name = this.capitalize(contact.name);
+            });
+        },
     },
-    /* updated() {
-        console.log(this.activeIndex);
-    }, */
+    beforeUpdate() {
+        this.searchContact();
+    },
 }).mount('#app');
