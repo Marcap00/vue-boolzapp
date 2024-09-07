@@ -45,6 +45,10 @@ h3 {
     font-weight: 400;
 }
 
+input:focus {
+    outline: .1rem solid #a7a7a7;
+}
+
 /* % Icons Style */
 i {
     color: #b1b1b1;
