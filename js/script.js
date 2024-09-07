@@ -189,10 +189,6 @@ createApp({
 
     },
     methods: {
-        capitalize(text) {
-            const capitalizedText = text.charAt(0).toUpperCase() + text.substring(1);
-            return capitalizedText;
-        },
 
         // Metodo che cambia il contatto attivo
         setActiveContact(i) {
@@ -227,25 +223,36 @@ createApp({
             // Richiamo il metodo che risponde automaticamente dopo un secondo
             this.autoReplyMessage(i);
         },
+        // Metodo che capitalizza la prima lettera di una parola
+        capitalize: (text) => {
+            // Inizializzo la stringa capitalizzata vuota
+            let capitalizedText = "";
+            // Ritorno la stringa montata
+            return capitalizedText = text.charAt(0).toUpperCase() + text.substring(1);
+        },
+
+        // Metodo che cerca se una parola è inclusa in un'altra parola
+        isIncludes: (text, textToFind) => {
+            // Trasformo il testo e la stringa da cercare in minuscolo (per poterli cercare senza problemi di case sensitive)
+            text = text.toLowerCase();
+            textToFind = textToFind.toLowerCase();
+            // Ritorno true altrimenti false
+            return text.includes(textToFind) ? true : false;
+        },
         // Metodo che cerca il contatto
         searchContact() {
             // Ciclo l'array dei contatti
             this.contacts.forEach((contact) => {
-                contact.name = contact.name.toLowerCase();
-                this.textToFind = this.textToFind.toLowerCase();
-                // Se il nome del contatto include la stringa da cercare
-                if (contact.name.includes(this.textToFind)) {
-                    // Imposto il contatto come visibile
-                    contact.visible = true;
-                } else {
-                    // Altrimenti lo rendo non visibile
-                    contact.visible = false;
-                }
+                // Assegno un valore booleano alla proprietà del contatto in base al risultato della  funzione richiamata
+                // contact.visible = contact.name.includes(this.textToFind) ? true : false;
+                contact.visible = this.isIncludes(contact.name, this.textToFind);
+                // Utilizzo il metodo capitalize per rendere la prima lettera del nome del contatto maiuscola
                 contact.name = this.capitalize(contact.name);
             });
         },
     },
     beforeUpdate() {
+        // Richiamo il metodo searchContact prima di aggiornare 
         this.searchContact();
     },
 }).mount('#app');
