@@ -9,16 +9,33 @@
 }
 
 /* % UTILITIES */
-/* img {
-    width: auto;
-    max-height: 100%;
-} */
-
 .sticky {
     position: sticky;
     top: 0;
 }
 
+.text-small {
+    font-size: .75em;
+}
+
+.text-md {
+    font-size: .85em;
+}
+
+.text-lightgrey {
+    color: #b1b1b1;
+}
+
+.contacts-list>ul li.active {
+    background-color: #e9ebeb;
+}
+
+/* % Avatar Circle Img */
+.img-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
 
 /* % GENERAL */
 main {
@@ -27,22 +44,23 @@ main {
             #dcdbd3 15% 100%);
 }
 
-ul {
-    list-style: none;
-}
-
-a {
-    color: grey;
-}
-
 header {
     height: 50px;
     background-color: #eaeaea;
 }
 
+ul {
+    list-style: none;
+}
+
 h3 {
     font-size: 1rem;
     font-weight: 400;
+}
+
+time {
+    font-size: .75em;
+    color: #b1b1b1;
 }
 
 input:focus {
@@ -78,6 +96,10 @@ i {
     background-color: #8edafc;
 }
 
+.desktop-alerts a {
+    color: grey;
+}
+
 .col-lft .search-bar {
     height: 40px;
     background-color: #f9f9f9;
@@ -87,8 +109,6 @@ i {
     height: calc(100% - 150px);
     background-color: #fff;
 }
-
-/* TODO Adding overflow on the section contacts */
 
 /* % Alert Bell Icon Style */
 i.fa-bell-slash {
@@ -117,12 +137,13 @@ i.fa-bell-slash {
 
 .contacts-list li {
     position: relative;
+    cursor: pointer;
 }
 
-time {
+.contacts-list time {
     position: absolute;
-    top: 3px;
-    right: 3px;
+    top: 5px;
+    right: 5px;
 }
 
 /* Right Column */
@@ -136,15 +157,29 @@ time {
     background-color: #f3eeea;
 }
 
-/* TODO Adding overflow on the section chat */
-
-/* % Avatar Circle Img */
-.img-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
 .input-message input {
     line-height: 36px;
+}
+
+/* % CHAT */
+
+.message-chat p {
+    width: 250px;
+    padding: .8rem 1rem;
+
+    position: relative;
+}
+
+.message-chat p.sent {
+    background-color: #d5f9ba;
+}
+
+.message-chat p.received {
+    background-color: #fff;
+}
+
+.message-chat p time {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
 }
