@@ -6,12 +6,16 @@ Replica della grafica con la possibilità di avere messaggi scritti dall’utent
 TODO Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
  */
 
+
+// Devo creare una funzione che mi restituisca l'indice dell'oggetto degli array
+
 const { createApp } = Vue;
 
 createApp({
     data() {
         return {
             // Inizializzazione dei dati
+            activeIndex: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -176,5 +180,15 @@ createApp({
                 }
             ],
         }
+    },
+    methods: {
+        changeContact(i) {
+            this.activeIndex = i;
+        }
+
+        // Funzione che mi restituisce l'indice dell'oggetto
+        /* currentIndex: () => {
+            return this.contacts.array.forEach((contact, index) => index);
+        } */
     },
 }).mount('#app');
