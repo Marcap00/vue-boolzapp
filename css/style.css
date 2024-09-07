@@ -23,8 +23,8 @@
 /* % GENERAL */
 main {
     background: linear-gradient(to bottom,
-            #009688 20%,
-            #dcdbd3 20% 100%);
+            #009688 15%,
+            #dcdbd3 15% 100%);
 }
 
 ul {
@@ -48,6 +48,7 @@ h3 {
 /* % Icons Style */
 i {
     color: #b1b1b1;
+    cursor: pointer;
 }
 
 /* % Main */
@@ -99,7 +100,7 @@ i.fa-bell-slash {
 .search-bar i.fa-search {
     border-radius: 5px 0px 0px 5px;
     font-size: .75em;
-    line-height: 24px;
+    line-height: 32px;
 }
 
 .search-bar input {
@@ -138,4 +139,8 @@ time {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+}
+
+.input-message input {
+    line-height: 36px;
 }
