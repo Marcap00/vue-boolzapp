@@ -15,6 +15,9 @@ createApp({
     data() {
         return {
             // Inizializzazione dei dati
+            // Inizializzo il messaggio come stringa vuota
+            newMessage: "",
+            // Iniziallizzo l'indice del contatto attivo a 0
             activeIndex: 0,
             contacts: [
                 {
@@ -184,11 +187,39 @@ createApp({
     methods: {
         // Metodo che cambia il contatto attivo
         setActiveContact(i) {
+            // Assegno all'indice del contatto attivo l'indice del contatto cliccato
             this.activeIndex = i;
+            console.log(this.activeIndex);
+        },
+        // Metodo che risponde automaticamente dopo un secondo
+        autoReplyMessage(i) {
+            setTimeout(() => {
+                this.contacts[i].messages.push({
+                    date: '10/01/2020 15:51:00',
+                    message: 'Ok!',
+                    status: 'received'
+                });
+            }, 1000);
         },
         // Metodo che aggiunge un messaggio inviato
+        addMessage(message, i) {
+            // Trimmo il messaggio
+            message = message.trim();
+            // Se il messaggio è vuoto return vuoto
+            if (!message) return;
+            // Aggiungo il messaggio all'array dei messaggi
+            this.contacts[i].messages.push({
+                date: '10/01/2020 15:51:00',
+                message,
+                status: 'sent'
+            });
+            // Svuoto il campo del messaggio
+            this.newMessage = "";
+            // Richiamo il metodo che risponde automaticamente dopo un secondo
+            this.autoReplyMessage(i);
+        },
     },
-    updated() {
+    /* updated() {
         console.log(this.activeIndex);
-    },
+    }, */
 }).mount('#app');
