@@ -81,7 +81,7 @@
                             <!-- Contacts List -->
                             <ul class="p-0 m-0">
                                 <!-- Contact -->
-                                <li v-for="(contact, i) in contacts" @click="changeContact(i)"
+                                <li v-for="(contact, i) in contacts" @click="setActiveContact(i)"
                                     :class="i === activeIndex ? 'active' : ''" class="d-flex align-items-center p-2">
                                     <!-- Img avatar contacts list -->
                                     <img class="img-avatar me-2" :src="contact.avatar" alt="#">
@@ -103,11 +103,11 @@
                         <!-- Header Right -->
                         <header class="sticky d-flex align-items-center p-2">
                             <!-- Image avatar column right -->
-                            <img class="img-avatar me-2" :src="contacts[0].avatar" alt="">
+                            <img class="img-avatar me-2" :src="contacts[activeIndex].avatar" alt="">
                             <!-- Information avatar -->
                             <ul class="flex-grow-1">
                                 <li>
-                                    <h3> {{contacts[0].name}} </h3>
+                                    <h3> {{contacts[activeIndex].name}} </h3>
                                 </li>
                                 <li class="text-small text-lightgrey">Ultimo accesso oggi alle 12:00</li>
                             </ul>
@@ -122,7 +122,7 @@
                         <div class="chat overflow-y-scroll py-4 px-5">
                             <ul class="p-0 m-0">
                                 <!-- Message -->
-                                <li v-for="(message, index) in contacts[0].messages" class="my-2">
+                                <li v-for="message in contacts[activeIndex].messages" class="my-2">
                                     <!-- If sent -->
                                     <div v-if="message.status === 'sent'"
                                         class="row-message d-flex justify-content-end">

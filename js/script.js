@@ -182,13 +182,13 @@ createApp({
         }
     },
     methods: {
-        changeContact(i) {
+        // Metodo che cambia il contatto attivo
+        setActiveContact(i) {
             this.activeIndex = i;
-        }
-
-        // Funzione che mi restituisce l'indice dell'oggetto
-        /* currentIndex: () => {
-            return this.contacts.array.forEach((contact, index) => index);
-        } */
+        },
+        // Metodo che aggiunge un messaggio inviato
+    },
+    updated() {
+        console.log(this.activeIndex);
     },
 }).mount('#app');
