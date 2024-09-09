@@ -94,7 +94,10 @@
                                         <li class="text-small text-lightgrey">Ultimo messaggio inviato</li>
                                     </ul>
                                     <!-- Time last message -->
-                                    <time>13:04</time>
+                                    <time>
+                                        <!-- {{contact.messages[0].date}} -->
+                                        13:04
+                                    </time>
                                 </li>
                             </ul>
                         </div>
@@ -123,24 +126,40 @@
                         <div class="chat overflow-y-scroll py-4 px-5">
                             <ul class="p-0 m-0">
                                 <!-- Message -->
-                                <li v-for="message in contacts[activeIndex].messages" class="my-2">
+                                <li v-for="(message, index) in contacts[activeIndex].messages" class="my-2">
                                     <!-- If sent -->
                                     <div v-if="message.status === 'sent'"
                                         class="row-message d-flex justify-content-end">
                                         <div class="message-chat">
-                                            <p class="sent rounded-3 text-md">
+                                            <div class="message sent rounded-3 text-md">
                                                 {{ message.message }}
-                                                <time>13:04</time>
-                                            </p>
+                                                <time>
+                                                    <!-- {{ message.date }} -->
+                                                    13:04
+                                                </time>
+                                                <i @click="openMenu(message, index)" class="fas fa-chevron-down"></i>
+                                                <ul class="menu">
+                                                    <li class="mb-3">Info messaggio</li>
+                                                    <li class="mb-2 text-danger">Elimina messaggio</li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                     <!-- Else received -->
                                     <div v-else class="row-message">
                                         <div class="message-chat">
-                                            <p class="received rounded-3 text-md">
+                                            <div class="message received rounded-3 text-md">
                                                 {{ message.message }}
-                                                <time>13:04</time>
-                                            </p>
+                                                <time>
+                                                    <!-- {{ message.date }} -->
+                                                    13:04
+                                                </time>
+                                                <i @click="openMenu(message, index)" class="fas fa-chevron-down"></i>
+                                                <ul class="menu">
+                                                    <li class="mb-3">Info messaggio</li>
+                                                    <li class="mb-2 text-danger">Elimina messaggio</li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
@@ -159,7 +178,8 @@
         </main>
     </div>
 
-
+    <!-- Luxon Script -->
+    <!-- <script src="luxon.js"></script> -->
     <!-- Custom JS -->
     <script src="js/script.js"></script>
 </body>

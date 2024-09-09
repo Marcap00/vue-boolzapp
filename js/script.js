@@ -1,13 +1,3 @@
-/* 
-Milestone 1
-
-Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
-
-TODO Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
- */
-
-
-// Devo creare una funzione che mi restituisca l'indice dell'oggetto degli array
 
 const { createApp } = Vue;
 
@@ -15,6 +5,7 @@ createApp({
     data() {
         return {
             // Inizializzazione dei dati
+
             textToFind: "",
             // Inizializzo il messaggio come stringa vuota
             newMessage: "",
@@ -233,11 +224,11 @@ createApp({
 
         // Metodo che cerca se una parola è inclusa in un'altra parola
         isIncludes: (text, textToFind) => {
-            // Trasformo il testo e la stringa da cercare in minuscolo (per poterli cercare senza problemi di case sensitive)
+            // Trasformo il testo ricevuto come e la stringa da cercare in minuscolo (per poterli cercare senza problemi di case sensitive)
             text = text.toLowerCase();
             textToFind = textToFind.toLowerCase();
-            // Ritorno true altrimenti false
-            return text.includes(textToFind) ? true : false;
+            // Uso il metodo inludes per verificare se la il testo da cercare è incluso nel testo
+            return text.includes(textToFind);
         },
         // Metodo che cerca il contatto
         searchContact() {
@@ -250,6 +241,19 @@ createApp({
                 contact.name = this.capitalize(contact.name);
             });
         },
+        // Metodo che apre il menu
+        openMenu(message, index) {
+            // Recupero tutti i menu
+            const menu = document.querySelectorAll(['.menu']);
+            console.log(menu);
+            console.log(message, index);
+            // Aggiungo e rimuovo la classe active al menu cliccato
+            menu[index].classList.toggle('active');
+        }
+
+
+
+
     },
     beforeUpdate() {
         // Richiamo il metodo searchContact prima di aggiornare 
