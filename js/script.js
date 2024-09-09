@@ -242,18 +242,25 @@ createApp({
             });
         },
         // Metodo che apre il menu
-        openMenu(message, index) {
+        openMenu(index) {
             // Recupero tutti i menu
             const menu = document.querySelectorAll(['.menu']);
-            console.log(menu);
-            console.log(message, index);
             // Aggiungo e rimuovo la classe active al menu cliccato
             menu[index].classList.toggle('active');
-        }
-
-
-
-
+        },
+        // Metodo che chiude il menu
+        closeMenu(index) {
+            // Recupero tutti i menu
+            const menu = document.querySelectorAll(['.menu']);
+            // Rimuovo la classe active al menu cliccato
+            menu[index].classList.remove('active');
+        },
+        // Metodo che cancella il messaggio
+        deleteMessage(index) {
+            // Rimuovo il messaggio dall'array dei messaggi
+            this.contacts[this.activeIndex].messages.splice(index, 1);
+            this.closeMenu(index);
+        },
     },
     beforeUpdate() {
         // Richiamo il metodo searchContact prima di aggiornare 

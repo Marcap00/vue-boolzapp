@@ -137,10 +137,12 @@
                                                     <!-- {{ message.date }} -->
                                                     13:04
                                                 </time>
-                                                <i @click="openMenu(message, index)" class="fas fa-chevron-down"></i>
+                                                <i @click="openMenu(index)" class="fas fa-chevron-down"></i>
                                                 <ul class="menu">
                                                     <li class="mb-3">Info messaggio</li>
-                                                    <li class="mb-2 text-danger">Elimina messaggio</li>
+                                                    <li @click="deleteMessage(index)" class="mb-2 text-danger">
+                                                        Elimina
+                                                        messaggio</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -154,10 +156,11 @@
                                                     <!-- {{ message.date }} -->
                                                     13:04
                                                 </time>
-                                                <i @click="openMenu(message, index)" class="fas fa-chevron-down"></i>
+                                                <i @click="openMenu(index)" class="fas fa-chevron-down"></i>
                                                 <ul class="menu">
                                                     <li class="mb-3">Info messaggio</li>
-                                                    <li class="mb-2 text-danger">Elimina messaggio</li>
+                                                    <li @click="deleteMessage(index)" class="mb-2 text-danger">
+                                                        Elimina messaggio</li>
                                                 </ul>
                                             </div>
                                         </div>
