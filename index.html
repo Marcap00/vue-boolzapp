@@ -95,7 +95,7 @@
                                     </ul>
                                     <!-- Time last message -->
                                     <time>
-                                        <!-- {{contact.messages[0].date}} -->
+                                        <!-- {{ formatDate(contact.messages[lastMessageIndex(i)].date) }} -->
                                         13:04
                                     </time>
                                 </li>
@@ -134,8 +134,8 @@
                                             <div class="message sent rounded-3 text-md">
                                                 {{ message.message }}
                                                 <time>
-                                                    <!-- {{ message.date }} -->
-                                                    13:04
+                                                    {{ formatDate(message.date) }}
+                                                    <!-- 13:04 -->
                                                 </time>
                                                 <i @click="openMenu(index)" class="fas fa-chevron-down"></i>
                                                 <ul class="menu">
@@ -153,8 +153,8 @@
                                             <div class="message received rounded-3 text-md">
                                                 {{ message.message }}
                                                 <time>
-                                                    <!-- {{ message.date }} -->
-                                                    13:04
+                                                    {{ formatDate(message.date) }}
+                                                    <!-- 13:04 -->
                                                 </time>
                                                 <i @click="openMenu(index)" class="fas fa-chevron-down"></i>
                                                 <ul class="menu">

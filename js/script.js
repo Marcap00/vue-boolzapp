@@ -4,8 +4,6 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            // Inizializzazione dei dati
-
             textToFind: "",
             // Inizializzo il messaggio come stringa vuota
             newMessage: "",
@@ -181,6 +179,7 @@ createApp({
     },
     methods: {
 
+
         // Metodo che cambia il contatto attivo
         setActiveContact(i) {
             // Assegno all'indice del contatto attivo l'indice del contatto cliccato
@@ -260,6 +259,37 @@ createApp({
             // Rimuovo il messaggio dall'array dei messaggi
             this.contacts[this.activeIndex].messages.splice(index, 1);
             this.closeMenu(index);
+        },
+        // Metodo che gestisce le date
+        formatDate(date) {
+            // Metodo con la gestione degli array
+            // Trasformo la stringa in un array splittandola con lo spazio
+            const dateSplit = date.split(" ");
+            // Recupero la data intera
+            /* const dateElement = dateSplit[0]; */
+            // Recupero il time intero
+            const timeElement = dateSplit[1];
+            // Trasformo la stringa del time intero in un array splittandola con ":"
+            const timeSplit = timeElement.split(":");
+            // Recupero le ore
+            const hours = timeSplit[0];
+            // Recupero i minunti
+            const minutes = timeSplit[1];
+            // Ritorno la stringa con le ore e i minuti montata
+            return `${hours}:${minutes}`;
+
+            // Metodo con Luxon (dont work)
+            /* const DateTime = luxon.DateTime;
+            const dt = DateTime.now(date);
+            console.log(dt)
+            const hours = dt.hour;
+            const minutes = dt.minute;
+            // Ritorno la data formattata
+            return `${hours}:${minutes}`; */
+
+            // Metodo con l'oggetto Date e i suoi metodi (dont work)
+            /* const formattedDate = new Date(date).toLocaleString('it-IT', { hour: '2-digit', minute: '2-digit', hour12: false });
+            return formattedDate; */
         },
     },
     beforeUpdate() {
