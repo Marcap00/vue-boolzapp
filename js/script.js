@@ -4,6 +4,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            // Inizializzo il testo da cercare come stringa vuota
             textToFind: "",
             // Inizializzo il messaggio come stringa vuota
             newMessage: "",
@@ -179,7 +180,6 @@ createApp({
     },
     methods: {
 
-
         // Metodo che cambia il contatto attivo
         setActiveContact(i) {
             // Assegno all'indice del contatto attivo l'indice del contatto cliccato
@@ -290,6 +290,10 @@ createApp({
             // Metodo con l'oggetto Date e i suoi metodi (dont work)
             /* const formattedDate = new Date(date).toLocaleString('it-IT', { hour: '2-digit', minute: '2-digit', hour12: false });
             return formattedDate; */
+        },
+        // Metodo che ricarica la pagina
+        reload() {
+            location.reload();
         },
     },
     beforeUpdate() {
